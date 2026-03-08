@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Session</title>
+</head>
+
+<body>
+
+<div id="app">
+  {{ message }} {{ ourInput }}
+
+<div>
+  {{ count }}
+  <div>
+    <button v-on:click="addCount(1)">Add</button>
+    <button v-on:click="resetCount">Reset</button>
+    <button v-on:click="reduceCount(5)">Reduce</button>
+  </div>
+</br>
+  <div>
+    <input type="text" v-model="ourInput"/>
+    
+  </div>
+</div>
+</div>
+
+<!-- Vue CDN -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
