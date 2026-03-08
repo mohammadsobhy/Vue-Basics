@@ -1,35 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>First Session</title>
-</head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<body>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
 
-<div id="app">
-  {{ message }} {{ ourInput }}
+		<title>Vue vs Native JS</title>
+	</head>
 
-<div>
-  {{ count }}
-  <div>
-    <button v-on:click="addCount(1)">Add</button>
-    <button v-on:click="resetCount">Reset</button>
-    <button v-on:click="reduceCount(5)">Reduce</button>
-  </div>
-</br>
-  <div>
-    <input type="text" v-model="ourInput"/>
-    
-  </div>
-</div>
-</div>
+	<body class="bg-light">
+		<div class="container py-5">
+			<div class="row g-4">
+				<!-- Vue Section -->
+				<div class="col-md-6">
+					<div class="card shadow-sm h-100">
+						<div class="card-body">
+							<h3 class="card-title text-primary">With Vue Framework</h3>
 
-<!-- Vue CDN -->
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+							<p class="text-muted">
+								This example uses the Vue framework to handle reactivity and DOM
+								updates automatically. Data changes update the UI instantly
+								without manually manipulating the DOM.
+							</p>
 
-<script type="module" src="script.js"></script>
+							<hr />
 
-</body>
+							<div id="app">
+								<h4>{{ message }} {{ ourInput }}</h4>
+
+								<h2 class="my-3">{{ count }}</h2>
+
+								<div class="mb-3">
+									<button class="btn btn-success me-2" v-on:click="addCount(1)">
+										Add
+									</button>
+									<button
+										class="btn btn-secondary me-2"
+										v-on:click="resetCount"
+									>
+										Reset
+									</button>
+									<button class="btn btn-danger" v-on:click="reduceCount(5)">
+										Reduce
+									</button>
+								</div>
+
+								<input
+									type="text"
+									class="form-control"
+									placeholder="Write something..."
+									v-model="ourInput"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Native JS Section -->
+				<div class="col-md-6">
+					<div class="card shadow-sm h-100">
+						<div class="card-body">
+							<h3 class="card-title text-dark">With Native JavaScript</h3>
+
+							<p class="text-muted">
+								This example uses pure JavaScript without frameworks. DOM
+								elements must be manually updated whenever the data changes.
+							</p>
+
+							<hr />
+
+							<div>
+								<h4>
+									<span id="message"></span>
+									<span id="inputText"></span>
+								</h4>
+
+								<h2 id="counter" class="my-3">0</h2>
+
+								<div class="mb-3">
+									<button class="btn btn-success me-2" id="add">Add</button>
+									<button class="btn btn-secondary me-2" id="reset">
+										Reset
+									</button>
+									<button class="btn btn-danger" id="reduce">Reduce</button>
+								</div>
+
+								<input
+									type="text"
+									id="inputField"
+									class="form-control"
+									placeholder="Write something..."
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Vue CDN -->
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+		<script type="module" src="vue-script.js"></script>
+		<script type="module" src="script.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+	</body>
 </html>
